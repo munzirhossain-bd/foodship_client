@@ -18,11 +18,11 @@ const NavBar = () => {
 
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/menu">Our Menu</Link></li>
+        <li><Link to="/menu">Food Menu</Link></li>
         <li><Link to="/order/salad">Order Food</Link></li>
         {
             isAdmin ? <li><Link to="/dashboard/adminhome">Dashboard</Link></li> : 
-            <li><Link to="/dashboard/userhome">Dashboard</Link></li>
+            <li><Link to="/dashboard/mycart">Dashboard</Link></li>
         }
         <li>
             <Link to="/dashboard/mycart">
@@ -43,7 +43,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
+            <div className="navbar fixed z-10 bg-opacity-40 max-w-screen-xl bg-black text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -53,7 +53,7 @@ const NavBar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Bistro Boss</a>
+                    <a className="btn btn-ghost normal-case text-xl">Food Ship</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

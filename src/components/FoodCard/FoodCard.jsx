@@ -16,7 +16,7 @@ const FoodCard = ({ item }) => {
         console.log(item);
         if(user && user.email){
             const cartItem = {menuItemId: _id, name, image, price, email: user.email}
-            fetch('http://localhost:5000/carts', {
+            fetch('https://food-ship.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -53,7 +53,7 @@ const FoodCard = ({ item }) => {
         }
     }
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-84 bg-base-100 shadow-xl mt-4 mb-4">
             <figure><img src={image} alt="Shoes" /></figure>
             <p className="absolute right-0 mr-4 mt-4 px-4 bg-slate-900 text-white">${price}</p>
             <div className="card-body flex flex-col items-center">

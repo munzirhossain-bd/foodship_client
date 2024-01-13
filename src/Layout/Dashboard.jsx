@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
+import { FaShoppingCart, FaWallet, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
 
@@ -18,7 +18,7 @@ const Dashboard = () => {
                 <Outlet></Outlet>
 
             </div>
-            <div className="drawer-side bg-[#3174e0]">
+            <div className="drawer-side bg-gray-800">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80">
 
@@ -31,9 +31,6 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
                             
                         </> : <>
-                            <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> User Home</NavLink></li>
-                            <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
-                            <li><NavLink to="/"><FaWallet></FaWallet> Payment History</NavLink></li>
                             <li>
                                 <NavLink to="/dashboard/mycart"><FaShoppingCart></FaShoppingCart> My Cart
                                     <span className="badge inl badge-secondary">+{cart?.length || 0}</span>
@@ -41,11 +38,7 @@ const Dashboard = () => {
 
                             </li>
                         </>
-                    }
-
-
-
-
+                    } 
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
                     <li><NavLink to="/menu"> Our Menu</NavLink></li>
